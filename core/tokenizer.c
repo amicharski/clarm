@@ -8,7 +8,7 @@ int i = 0;
 char range_arr[40];
 char* consumed_value;
 Token* tokens;
-bool debug = false;
+bool debug = true;
 
 char peek_next(){
     return source[i+1];
@@ -81,6 +81,6 @@ Token* tokenize(char* sourceCode){
     } while(sourceCode[i++] != '\0');
     tokens[token_counter++].token_type = END_OF_FILE;
     tokens[token_counter++].value = consumed_value;
-    if(debug) print_to_shell("EOF");
+    if(debug) print_to_shell("END_OF_FILE");
     return tokens;
 }
