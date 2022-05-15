@@ -77,6 +77,9 @@ Token* tokenize(char* sourceCode){
                     tokens[token_counter++].token_type = UNQUOTE;
                     if(debug) print_to_shell("UNQUOTE");
                 }
+            case '\\':
+                peek_next();
+                tokens[token_counter++].token_type = CHARACTER;
         }
     } while(sourceCode[i++] != '\0');
     tokens[token_counter++].token_type = END_OF_FILE;
