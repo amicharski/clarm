@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
         if(strcmp(argv[1], "1") == 0){
             test_1();
             test_2();
+            test_3();
             return 0;
         } else if(strcmp(argv[2], "2") == 0){
             test_2();

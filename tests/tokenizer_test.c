@@ -8,11 +8,12 @@ void test_1(){
     assert_equals(token_array_as_str(tokens), "(1, (null))");
 }
 
-// BUG: print_tokens in test_2 prints absolutely nothing
 void test_2(){
     Token* tokens = tokenize("()");
-    printf("hi\n");
-    print_tokens(tokens);
-    printf("bye\n");
     assert_equals(token_array_as_str(tokens), "(1, (null))(2, (null))");
+}
+
+void test_3(){
+    Token* tokens = tokenize("(+ 3 5)");
+    assert_equals(token_array_as_str(tokens), "(1, (null))(8, (null))(4, 3)(4, 5)(2, (null))");
 }

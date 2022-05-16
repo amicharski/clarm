@@ -98,6 +98,8 @@ void insert_token_val(enum TokenType token, char* value, char* name){
 }
 
 Token* tokenize(char* sourceCode){
+    token_counter = 0;
+    i = 0;
     source = sourceCode;
     tokens = malloc(1024);
     do {

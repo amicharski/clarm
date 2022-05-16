@@ -24,7 +24,6 @@ void print_tokens(Token* tokens){
 
 char* token_as_str(Token* token){
     char* str = malloc(sizeof(char) * 20);
-    printf("hi: %s\n", str);
     strcpy(str, "(");
     char* type = malloc(sizeof(char) * 2);
     snprintf(type, 2, "%u", token->token_type);
