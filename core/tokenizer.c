@@ -55,8 +55,7 @@ bool consume_int(){
         j++;
     } while(is_digit(source[++i]));
     consumed_value[j] = '\0';
-    if(is_alpha(source[--i])) return false;
-    return true;
+    return false;
 }
 
 bool consume_symbol(){
@@ -81,7 +80,7 @@ bool consume_string(){
     } while(is_stringable(source[++i]));
     consumed_value[j] = '\0';
     --i;
-    if(debug) printf("\nidentifier: %s\n", consumed_value);
+    if(debug) printf("\nstring: %s\n", consumed_value);
     return true;
 }
 
@@ -151,13 +150,14 @@ Token* tokenize(char* sourceCode){
                 }
             default:
                 if(is_digit(ch)){
-                    consume_int();
-                    if(ch == '.'){
-                        if(consume_int()){
-                            insert_token_val(FLOAT, consumed_value, "FLOAT");
+                    if(!consume_int()){
+                        if(ch == '.'){
+                            if(consume_int()){
+                                insert_token_val(FLOAT, consumed_value, "FLOAT");
+                            }
+                        } else {
+                            insert_token_val(INT, consumed_value, "INT");
                         }
-                    } else {
-                        insert_token_val(INT, consumed_value, "INT");
                     }
                 } else if(is_symbolic(ch)){
                     consume_symbol();

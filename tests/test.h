@@ -5,5 +5,6 @@
 #include "stdbool.h"
 
 bool assert_equals(char*, char*);
+bool assert_token_equals(char*, char*);
 
 #endif

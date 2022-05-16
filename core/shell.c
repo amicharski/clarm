@@ -26,7 +26,7 @@ char* token_as_str(Token* token){
     char* str = malloc(sizeof(char) * 20);
     strcpy(str, "(");
     char* type = malloc(sizeof(char) * 2);
-    snprintf(type, 2, "%u", token->token_type);
+    snprintf(type, 3, "%u", token->token_type);
     strcat(str, type);
     strcat(str, ", ");
     char* value = malloc(sizeof(char) * 20);

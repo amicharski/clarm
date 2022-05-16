@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "test.h"
+#include "../include/shell.h"
 
 bool assert_equals(char* string1, char* string2){
     printf("String 1: %s\n", string1);
@@ -12,4 +13,8 @@ bool assert_equals(char* string1, char* string2){
         printf("FALSE\n");
         return false;
     }
+}
+
+bool assert_token_equals(char* test_token, char* expected_token){
+    return assert_equals(token_array_as_str(tokenize(test_token)), expected_token);
 }
