@@ -54,7 +54,9 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -89,7 +91,9 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -111,6 +115,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "core/shell.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/tokenizer_test.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/test.c",
 			"sourceGroupIndex" : 0
 		}
 	],
